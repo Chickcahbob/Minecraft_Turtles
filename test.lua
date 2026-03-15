@@ -6,13 +6,6 @@ function getItem( index )
     data = turtle.getItemDetail()
 end
 
-function forward(x, y)
-    if placeSapling == false then
-        turtle.dig()
-        turtle.forward()
-    end
-end
-
 function placeSapling()
     for i=1,16 do
         getItem(i)
@@ -32,6 +25,13 @@ function placeSapling()
     turtle.select(1)
 
     return false
+end
+
+function forward(x, y)
+    if y % 3 ~= 2 and x % 3 ~= 1 and placeSapling() == false then
+        turtle.dig()
+        turtle.forward()
+    end
 end
 
 function refuel()
