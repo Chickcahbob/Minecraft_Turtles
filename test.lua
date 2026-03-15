@@ -34,7 +34,10 @@ function chopLogs()
         turtle.dig()
         if string.find( data.name, "log") then
             turtle.forward()
-            chopLogs()
+            for i = 1,4 do
+                chopLogs()
+                turnRight()
+            end
         end
         turtle.back()
     end
@@ -46,14 +49,6 @@ function chopLogs()
         chopLogs()
         turtle.down()
     end
-
-    for i = 1,3 do
-        turtle.turnRight()
-        chopLogs()
-    end
-
-    turtle.turnRight()
-
 
 end
 
