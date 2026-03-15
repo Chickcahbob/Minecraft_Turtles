@@ -4,7 +4,7 @@ turtle.forward()
 
 local data
 
-function fuel
+function fuel()
     for i=0,15 do
         turtle.select(i)
         turtle.getSelectedSlot()
