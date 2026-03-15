@@ -48,15 +48,18 @@ function travelPath( max_x, max_y)
 
         print( "X: "..x.." ".."Y: "..y)
 
-        if x % 2 == 1 and y % 2 == 0 and y < max_y then
-            if placeSapling() then
-                y = y + 1
-            end
-        end
+        
 
         turtle.dig()
         turtle.forward()
-        y = y + 1
+        if x % 2 == 1 and y % 2 == 0 then
+            if placeSapling() then
+                y = y + 1
+            end
+        else
+            y = y + 1
+        end
+
         if y == max_y and x < max_x - 1 then
             if x % 2 == 1 then
                 y = 1
