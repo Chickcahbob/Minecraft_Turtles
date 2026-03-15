@@ -50,7 +50,7 @@ function travelPath( max_x, max_y)
 
         
 
-        if x % 2 == 1 and y % 2 == 0 then
+        if x % 3 == 1 and y % 3 == 0 then
             if placeSapling() then
                 y = y + 1
             end
