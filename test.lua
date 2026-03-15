@@ -41,14 +41,14 @@ function travelPath( max_x, max_y)
     x = 1
     y = 1
 
-    while( x < max_x - 1 and y < max_y ) do
+    while( x < max_x and y < max_y ) do
         if max_x % 2 == 0 then
             max_x = max_x + 1
         end
         turtle.dig()
         turtle.forward()
         y = y + 1
-        if y == max_y then
+        if y == max_y and x != max_x - 1 then
             if x % 2 == 1 then
                 y = 1
                 turtle.turnRight()
@@ -72,7 +72,6 @@ function travelPath( max_x, max_y)
     turtle.turnRight()
 
     while( x > 1 ) do
-
         turtle.forward()
         x = x - 1
     end
