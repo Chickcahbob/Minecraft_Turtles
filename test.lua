@@ -1,7 +1,3 @@
-
-turtle.refuel()
-turtle.forward()
-
 local data
 
 function fuel()
@@ -16,3 +12,5 @@ function fuel()
     end
     turtle.select(0)
 end
+
+fuel()
