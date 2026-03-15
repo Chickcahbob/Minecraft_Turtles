@@ -15,6 +15,7 @@ function placeSapling()
                 turtle.placeDown()
                 turtle.dig()
                 turtle.forward()
+                turtle.digDown()
                 turtle.down()
                 break
             end
@@ -35,6 +36,28 @@ function refuel()
     turtle.select(1)
 end
 
+function travelPath( max_x, max_y)
+
+    x = 1
+    y = 1
+
+    while( x < max_x and y < max_y ) do
+        turtle.dig()
+        turtle.forward()
+        y = y + 1
+        if y = max_y then
+            y = 1
+            turtle.turnRight()
+            turtle.dig()
+            turtle.forward()
+            turtle.turnRight()
+            x = x + 1
+        end
+        
+    end
+
+end
+
 refuel()
 
-placeSapling()
+travelPath( 15, 20 )
