@@ -84,9 +84,11 @@ function travelPath( max_x, max_y)
         turtle.forward()
         x = x - 1
     end
+    
+    turtle.turnRight()
 
 end
 
 refuel()
 
-travelPath( 20, 15 )
+travelPath( 20, 16 )
