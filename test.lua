@@ -62,7 +62,14 @@ function forward(x, y)
 
     if data then
         
-        chopWood()
+        if string.find(data.name, "wood") then
+
+            chopWood()
+
+        else
+            turtle.dig()
+            turtle.forward()
+        end
 
     end
 
