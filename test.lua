@@ -31,8 +31,8 @@ function chopLogs()
 
     block_exists, data = turtle.inspect()
     if block_exists then
-        turtle.dig()
         if string.find( data.name, "log") then
+            turtle.dig()
             turtle.forward()
             for i = 1,4 do
                 chopLogs()
@@ -68,6 +68,16 @@ function forward(x, y)
 
             chopLogs()
 
+        elseif stiring( data.name, "sapling") then
+            turtle.digUp()
+            turtle.Up()
+            for i = 1,2 do
+                turtle.dig()
+                turtle.forward()
+            end
+            turtle.digDown()
+            turtle.down()
+            return 2
         else
             turtle.dig()
         end
@@ -81,6 +91,7 @@ function forward(x, y)
         turtle.forward()
     end
 
+    return 1
 end
 
 function refuel()
@@ -102,10 +113,10 @@ function travelPath( max_x, max_y)
 
     while( x < max_x and y < max_y ) do
 
-        forward(x, y)
-        y = y + 1
+        y = y + forward(x, y)
 
         if y == max_y and x < max_x - 1 then
+            turtle.suck()
             if x % 2 == 1 then
                 y = 1
                 turtle.turnRight()
@@ -119,6 +130,7 @@ function travelPath( max_x, max_y)
                 turtle.forward()
                 turtle.turnLeft()
             end
+            turtle.suck()
             x = x + 1
         end
         
