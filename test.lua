@@ -13,6 +13,9 @@ function placeSapling()
             if string.find(data.name, "sapling") then
                 turtle.up()
                 turtle.placeDown()
+                turtle.dig()
+                turtle.forward()
+                turtle.down()
                 break
             end
         end
