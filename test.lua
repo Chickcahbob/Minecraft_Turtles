@@ -7,7 +7,7 @@ function fuel()
         data = turtle.getItemDetail()
         if data then
             if data.name == "minecraft:coal" or data.name == "minecraft:charcoal" then
-                print( "Item name: ", data.name)
+                turtle.refuel()
             end
         end
     end
