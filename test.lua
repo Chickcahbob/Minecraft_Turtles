@@ -27,14 +27,14 @@ function placeSapling()
     return false
 end
 
-function chopWood()
+function chopLogs()
 
     turtle.inspect()
     if data then
         turtle.dig()
         turtle.forward()
-        if string.find( data.name, "wood") then
-            chopWood()
+        if string.find( data.name, "log") then
+            chopLogs()
         end
         turtle.back()
     end
@@ -43,13 +43,13 @@ function chopWood()
     if data then
         turtle.digUp()
         turtle.up()
-        chopWood()
+        chopLogs()
         turtle.down()
     end
 
     for i = 1,3 do
         turtle.turnRight()
-        chopWood()
+        chopLogs()
     end
 
     turtle.turnRight()
@@ -62,9 +62,9 @@ function forward(x, y)
 
     if data then
         
-        if string.find(data.name, "wood") then
+        if string.find(data.name, "log") then
 
-            chopWood()
+            chopLogs()
 
         else
             turtle.dig()
