@@ -6,6 +6,13 @@ function getItem( index )
     data = turtle.getItemDetail()
 end
 
+function forward(x, y)
+    if placeSapling == false then
+        turtle.dig()
+        turtle.forward()
+    end
+end
+
 function placeSapling()
     for i=1,16 do
         getItem(i)
@@ -46,20 +53,8 @@ function travelPath( max_x, max_y)
 
     while( x < max_x and y < max_y ) do
 
-        if x % 3 == 1 and y % 3 == 1 then
-            if placeSapling() then
-                y = y + 1
-            else
-                turtle.dig()
-                turtle.forward()
-                y = y + 1
-            end
-    
-        else
-            turtle.dig()
-            turtle.forward()
-            y = y + 1
-        end
+        forward()
+        y = y + 1
 
         if y == max_y and x < max_x - 1 then
             if x % 2 == 1 then
