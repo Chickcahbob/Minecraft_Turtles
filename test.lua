@@ -8,7 +8,7 @@ end
 
 function placeSapling()
     for i=1,16 do
-        data = getItem(i)
+        getItem(i)
         if data then
             if string.find(data.name, "sapling") then
                 turtle.up()
@@ -82,7 +82,7 @@ end
 
 function refuel()
     for i=1,16 do
-        data = getItem(i)
+        getItem(i)
         if data then
             if data.name == "minecraft:coal" or data.name == "minecraft:charcoal" then
                 turtle.refuel()
