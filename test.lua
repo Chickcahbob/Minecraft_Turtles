@@ -68,9 +68,9 @@ function forward(x, y)
 
             chopLogs()
 
-        elseif stiring( data.name, "sapling") then
+        elseif string( data.name, "sapling") then
             turtle.digUp()
-            turtle.Up()
+            turtle.up()
             for i = 1,2 do
                 turtle.dig()
                 turtle.forward()
