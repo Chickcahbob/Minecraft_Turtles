@@ -36,7 +36,7 @@ function chopLogs()
             turtle.forward()
             for i = 1,4 do
                 chopLogs()
-                turnRight()
+                turtle.turnRight()
             end
         end
         turtle.back()
@@ -54,7 +54,7 @@ end
 
 function forward(x, y)
     
-    local saplingPlaced = false;
+    saplingPlaced = false;
 
     block_exists, data = turtle.inspect()
 
