@@ -10,7 +10,7 @@ function fuel()
         end
         
     end
-    turtle.select(0)
+    turtle.select(1)
 end
 
 fuel()
