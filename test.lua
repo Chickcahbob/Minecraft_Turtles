@@ -1,4 +1,4 @@
-local data
+local block_exists, data
 
 function getItem( index )
     turtle.select(index)
@@ -29,8 +29,8 @@ end
 
 function chopLogs()
 
-    data = turtle.inspect()
-    if data then
+    block_exists, data = turtle.inspect()
+    if block_exists then
         turtle.dig()
         if string.find( data.name, "log") then
             turtle.forward()
@@ -39,8 +39,8 @@ function chopLogs()
         turtle.back()
     end
 
-    data = turtle.inspectUp()
-    if data then
+    block_exists, data = turtle.inspectUp()
+    if block_exists then
         turtle.digUp()
         turtle.up()
         chopLogs()
@@ -61,9 +61,9 @@ function forward(x, y)
     
     local saplingPlaced = false;
 
-    data = turtle.inspect()
+    block_exists, data = turtle.inspect()
 
-    if data then
+    if block_exists then
         
         print( data.name )
         if string.find(data.name, "log") then
