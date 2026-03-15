@@ -46,6 +46,8 @@ function travelPath( max_x, max_y)
 
     while( x < max_x and y < max_y ) do
 
+        print( "X: "..x.." ".."Y: "..y)
+
         if x % 2 == 1 and y % 2 == 0 and y < max_y then
             if placeSapling() then
                 y = y + 1
