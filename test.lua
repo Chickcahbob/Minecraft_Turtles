@@ -28,9 +28,8 @@ function placeSapling()
 end
 
 function forward(x, y)
-    print( "X: "..x.." Y: "..y)
     local saplingPlaced = false;
-    if y % 3 == 2 and x % 3 == 0 then
+    if y % 3 == 2 and x % 3 == 1 then
         saplingPlaced = placeSapling()
     end
 
