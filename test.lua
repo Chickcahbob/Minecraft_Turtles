@@ -45,7 +45,7 @@ function travelPath( max_x, max_y)
         turtle.dig()
         turtle.forward()
         y = y + 1
-        if y = max_y then
+        if y == max_y then
             y = 1
             turtle.turnRight()
             turtle.dig()
