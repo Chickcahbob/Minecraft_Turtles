@@ -5,10 +5,11 @@ function fuel()
         turtle.select(i)
         turtle.getSelectedSlot()
         data = turtle.getItemDetail()
-        if data.name == "minecraft:coal" or data.name == "minecraft:charcoal" then
-            print( "Item name: ", data.name)
+        if data then
+            if data.name == "minecraft:coal" or data.name == "minecraft:charcoal" then
+                print( "Item name: ", data.name)
+            end
         end
-        
     end
     turtle.select(1)
 end
