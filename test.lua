@@ -91,4 +91,4 @@ end
 
 refuel()
 
-travelPath( 20, 16 )
+travelPath( 20, 6 )
