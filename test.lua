@@ -8,7 +8,7 @@ end
 
 function placeSapling()
     for i=1,16 do
-        getItem(i)
+        data = getItem(i)
         if data then
             if string.find(data.name, "sapling") then
                 turtle.up()
@@ -29,7 +29,7 @@ end
 
 function chopLogs()
 
-    turtle.inspect()
+    data = turtle.inspect()
     if data then
         turtle.dig()
         if string.find( data.name, "log") then
@@ -39,7 +39,7 @@ function chopLogs()
         turtle.back()
     end
 
-    turtle.inspectUp()
+    data = turtle.inspectUp()
     if data then
         turtle.digUp()
         turtle.up()
@@ -59,11 +59,13 @@ end
 
 function forward(x, y)
     
-    saplingPlaced = false;
-    turtle.inspect()
+    local saplingPlaced = false;
+
+    data = turtle.inspect()
 
     if data then
         
+        print( data.name )
         if string.find(data.name, "log") then
 
             chopLogs()
@@ -85,7 +87,7 @@ end
 
 function refuel()
     for i=1,16 do
-        getItem(i)
+        data = getItem(i)
         if data then
             if data.name == "minecraft:coal" or data.name == "minecraft:charcoal" then
                 turtle.refuel()
