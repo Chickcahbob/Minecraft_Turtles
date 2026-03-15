@@ -65,7 +65,6 @@ function travelPath( max_x, max_y)
         
     end
 
-    turtle.turnRight()
 
     if max_x % 2 == 0 then
         turtle.turnRight()
@@ -78,6 +77,8 @@ function travelPath( max_x, max_y)
         end
 
     end
+
+    turtle.turnRight()
 
     while( x > 1 ) do
         turtle.forward()
