@@ -58,6 +58,8 @@ function chopLogs()
 end
 
 function forward(x, y)
+    
+    saplingPlaced = false;
     turtle.inspect()
 
     if data then
@@ -68,20 +70,15 @@ function forward(x, y)
 
         else
             turtle.dig()
-            turtle.forward()
         end
+    end
 
-    else
+    if y % 3 == 2 and x % 3 == 1 then
+        saplingPlaced = placeSapling()
+    end
 
-        saplingPlaced = false;
-
-        if y % 3 == 2 and x % 3 == 1 then
-            saplingPlaced = placeSapling()
-        end
-
-        if saplingPlaced == false then
-            turtle.forward()
-        end
+    if saplingPlaced == false then
+        turtle.forward()
     end
 
 end
