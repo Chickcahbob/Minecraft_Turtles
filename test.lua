@@ -1,2 +1,2 @@
-turtle.refuel(0)
+turtle.refuel()
 turtle.forward()
