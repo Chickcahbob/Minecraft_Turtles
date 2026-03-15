@@ -35,4 +35,6 @@ function refuel()
     turtle.select(1)
 end
 
+refuel()
+
 placeSapling()
