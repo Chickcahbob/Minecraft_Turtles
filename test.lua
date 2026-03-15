@@ -27,16 +27,55 @@ function placeSapling()
     return false
 end
 
+function chopWood()
+
+    turtle.inspect()
+    if data then
+        turtle.dig()
+        turtle.forward()
+        if string.find( data.name, "wood") then
+            chopWood()
+        end
+        turtle.back()
+    end
+
+    turtle.inspectUp()
+    if data then
+        turtle.digUp()
+        turtle.up()
+        chopWood()
+        turtle.down()
+    end
+
+    for i = 1,3 do
+        turtle.turnRight()
+        chopWood()
+    end
+
+    turtle.turnRight()
+
+
+end
+
 function forward(x, y)
-    local saplingPlaced = false;
+    turtle.inspect()
+
+    if data then
+        
+        chopWood()
+
+    end
+
+    saplingPlaced = false;
+
     if y % 3 == 2 and x % 3 == 1 then
         saplingPlaced = placeSapling()
     end
 
     if saplingPlaced == false then
-        turtle.dig()
         turtle.forward()
     end
+
 end
 
 function refuel()
