@@ -44,13 +44,15 @@ function chopLogs()
 
     block_exists, data = turtle.inspectUp()
     if block_exists then
-        turtle.digUp()
-        turtle.up()
-        for i = 1,4 do 
-            turtle.turnRight()
-            chopLogs()
+        if string.find( data.name, "log" ) then
+            turtle.digUp()
+            turtle.up()
+            for i = 1,4 do 
+                turtle.turnRight()
+                chopLogs()
+            end
+            turtle.down()
         end
-        turtle.down()
     end
 
 end
