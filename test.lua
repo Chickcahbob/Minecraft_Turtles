@@ -28,7 +28,8 @@ function placeSapling()
 end
 
 function forward(x, y)
-    saplingPlaced = false;
+    print( "X: "..x.." Y: "..y)
+    local saplingPlaced = false;
     if y % 3 == 2 and x % 3 == 0 then
         saplingPlaced = placeSapling()
     end
@@ -60,7 +61,6 @@ function travelPath( max_x, max_y)
 
         forward(x, y)
         y = y + 1
-        print( "X: "..x.." Y: "..y)
 
         if y == max_y and x < max_x - 1 then
             if x % 2 == 1 then
