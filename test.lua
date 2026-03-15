@@ -43,6 +43,12 @@ function travelPath( max_x, max_y)
 
     while( x < max_x and y < max_y ) do
 
+        if x % 2 == 1 and y % 2 == 0 then
+
+            placeSapling()
+
+        end
+
         turtle.dig()
         turtle.forward()
         y = y + 1
