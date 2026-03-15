@@ -32,8 +32,8 @@ function chopLogs()
     turtle.inspect()
     if data then
         turtle.dig()
-        turtle.forward()
         if string.find( data.name, "log") then
+            turtle.forward()
             chopLogs()
         end
         turtle.back()
