@@ -70,7 +70,7 @@ function forward(x, y)
 
             chopLogs()
 
-        elseif string( data.name, "sapling") then
+        elseif string.find( data.name, "sapling") then
             turtle.digUp()
             turtle.up()
             for i = 1,2 do
@@ -86,7 +86,12 @@ function forward(x, y)
     end
 
     if y % 3 == 2 and x % 3 == 1 then
-        saplingPlaced = placeSapling()
+        block_exists, data = turtle.inspectDown()
+        if block_exists then
+            if string.find( data.name, "dirt") or string.find( data.name, "grass") then
+                saplingPlaced = placeSapling()
+            end
+        end
     end
 
     if saplingPlaced == false then
