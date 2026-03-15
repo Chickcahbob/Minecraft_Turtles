@@ -38,15 +38,18 @@ function chopLogs()
                 chopLogs()
                 turtle.turnRight()
             end
+            turtle.back()
         end
-        turtle.back()
     end
 
     block_exists, data = turtle.inspectUp()
     if block_exists then
         turtle.digUp()
         turtle.up()
-        chopLogs()
+        for i = 1,4 do 
+            turtle.turnRight()
+            chopLogs()
+        end
         turtle.down()
     end
 
