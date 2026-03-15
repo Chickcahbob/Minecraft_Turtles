@@ -46,11 +46,19 @@ function travelPath( max_x, max_y)
         turtle.forward()
         y = y + 1
         if y == max_y then
-            y = 1
-            turtle.turnRight()
-            turtle.dig()
-            turtle.forward()
-            turtle.turnRight()
+            if x % 2 == 1 then
+                y = 1
+                turtle.turnRight()
+                turtle.dig()
+                turtle.forward()
+                turtle.turnRight()
+            else
+                y = 1
+                turtle.turnLeft()
+                turtle.dig()
+                turtle.forward()
+                turtle.turnLeft()
+            end
             x = x + 1
         end
         
@@ -60,4 +68,4 @@ end
 
 refuel()
 
-travelPath( 15, 20 )
+travelPath( 20, 15 )
