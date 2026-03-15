@@ -1,22 +1,27 @@
 local data
 
+function getItem( index )
+    turtle.select(index)
+    turtle.getSelectedSlot()
+    data = turtle.getItemDetail()
+
+end
+
 function placeSapling()
     for i=1,16 do
-        turtle.select(i)
-        turtle.getSelectedSlot()
-        data = turtle.getItemDetail()
+        getItem(i)
         if data then
-            if string.find(data.name, "sapling") do
+            if string.find(data.name, "sapling") then
                 print( "Item Name: ", data.name)
                 
             end
         end
     end
+end
 
 function refuel()
     for i=1,16 do
         turtle.select(i)
-        turtle.getSelectedSlot()
         data = turtle.getItemDetail()
         if data then
             if data.name == "minecraft:coal" or data.name == "minecraft:charcoal" then
