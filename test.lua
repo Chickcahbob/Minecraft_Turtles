@@ -53,8 +53,9 @@ function travelPath( max_x, max_y)
 
     while( x < max_x and y < max_y ) do
 
-        forward()
+        forward(x, y)
         y = y + 1
+        print( "X: "...x..." Y: "...y)
 
         if y == max_y and x < max_x - 1 then
             if x % 2 == 1 then
