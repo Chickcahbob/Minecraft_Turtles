@@ -71,16 +71,17 @@ function forward(x, y)
             turtle.forward()
         end
 
-    end
+    else
 
-    saplingPlaced = false;
+        saplingPlaced = false;
 
-    if y % 3 == 2 and x % 3 == 1 then
-        saplingPlaced = placeSapling()
-    end
+        if y % 3 == 2 and x % 3 == 1 then
+            saplingPlaced = placeSapling()
+        end
 
-    if saplingPlaced == false then
-        turtle.forward()
+        if saplingPlaced == false then
+            turtle.forward()
+        end
     end
 
 end
